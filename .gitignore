@@ -140,3 +140,8 @@
 dev/CloudGemDefectReportSample/Gem/Resources/GameSDK.ico
 dev/UserSettings.xml
 filehashes.json
+dev/MyProject/Levels/Simple/_savebackup/
+dev/Editor/editoreventlog.xml
+dev/Editor/editorlayout.xml
+dev/MyProject/AWS/local-project-settings.json
+dev/SessionStatus/editor_statuses.json
