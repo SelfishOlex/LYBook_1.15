@@ -9,7 +9,7 @@ void MyComponent::Reflect(AZ::ReflectContext* reflection)
     auto sc = azrtti_cast<AZ::SerializeContext*>(reflection);
     if (!sc) return;
 
-    sc->Class<MyComponent>()
+    sc->Class<MyComponent, Component>()
         ->Version(1);
 
     AZ::EditContext* ec = sc->GetEditContext();
