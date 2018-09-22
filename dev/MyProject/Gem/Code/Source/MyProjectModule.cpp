@@ -7,7 +7,6 @@
 #include "MyProjectSystemComponent.h"
 #include "MyComponent.h"
 #include "OscillatorComponent.h"
-#include "MySpawnerComponent.h"
 
 #include <IGem.h>
 
@@ -28,7 +27,6 @@ namespace MyProject
                 MyProjectSystemComponent::CreateDescriptor(),
                 MyComponent::CreateDescriptor(),
                 OscillatorComponent::CreateDescriptor(),
-                MySpawnerComponent::CreateDescriptor(),
             });
         }
 
