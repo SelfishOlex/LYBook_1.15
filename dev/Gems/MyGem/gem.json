@@ -1,0 +1,15 @@
+{
+    "GemFormatVersion": 4,
+    "Uuid": "abe3bbe439d740f39bea6c5893125477",
+    "Name": "MyGem",
+    "DisplayName": "MyGem",
+    "Version": "0.1.0",
+    "Summary": "My gem.",
+    "Tags": ["Untagged"],
+    "IconPath": "preview.png",
+    "Modules": [
+        {
+            "Type": "GameModule"
+        }
+    ]
+}
