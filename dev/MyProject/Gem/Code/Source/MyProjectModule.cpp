@@ -6,6 +6,7 @@
 
 #include "MyProjectSystemComponent.h"
 #include "MyComponent.h"
+#include "OscillatorComponent.h"
 
 #include <IGem.h>
 
@@ -25,6 +26,7 @@ namespace MyProject
             m_descriptors.insert(m_descriptors.end(), {
                 MyProjectSystemComponent::CreateDescriptor(),
                 MyComponent::CreateDescriptor(),
+                OscillatorComponent::CreateDescriptor(),
             });
         }
 
