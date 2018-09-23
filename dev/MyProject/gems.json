@@ -56,6 +56,12 @@
             "_comment": "LegacyGameInterface"
         },
         {
+            "Path": "Gems/WindowPosition",
+            "Uuid": "34891f182f464c4390e15d54b6e08636",
+            "Version": "0.1.0",
+            "_comment": "WindowPosition"
+        },
+        {
             "Path": "Gems/CryLegacy",
             "Uuid": "352fef7706634c92814c587e84d7165a",
             "Version": "0.1.0",
@@ -112,8 +118,7 @@
         {
             "Path": "MyProject/Gem",
             "Uuid": "737482b19b5f426da338061a064a8ee0",
-            "Version": "0.1.0",
-            "_comment": "MyProject"
+            "Version": "0.1.0"
         },
         {
             "Path": "Gems/StartingPointMovement",
