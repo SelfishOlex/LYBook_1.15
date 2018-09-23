@@ -8,6 +8,7 @@
 #include "MyComponent.h"
 #include "OscillatorComponent.h"
 #include "MySpawnerComponent.h"
+#include "StartingMapSystemComponent.h"
 
 #include <IGem.h>
 
@@ -26,6 +27,7 @@ namespace MyProject
             // Push results of [MyComponent]::CreateDescriptor() into m_descriptors here.
             m_descriptors.insert(m_descriptors.end(), {
                 MyProjectSystemComponent::CreateDescriptor(),
+                StartingMapSystemComponent::CreateDescriptor(),
                 MyComponent::CreateDescriptor(),
                 OscillatorComponent::CreateDescriptor(),
                 MySpawnerComponent::CreateDescriptor(),
@@ -39,6 +41,7 @@ namespace MyProject
         {
             return AZ::ComponentTypeList{
                 azrtti_typeid<MyProjectSystemComponent>(),
+                azrtti_typeid<StartingMapSystemComponent>(),
             };
         }
     };
