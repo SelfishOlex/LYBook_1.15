@@ -2,11 +2,15 @@
 #include "MySpawnerComponent.h"
 #include <AzCore/Serialization/EditContext.h>
 #include <LmbrCentral/Scripting/SpawnerComponentBus.h>
+#include <AzFramework/Network/NetBindingHandlerBus.h>
 
 using namespace MyProject;
 
 void MySpawnerComponent::Activate()
 {
+    using namespace AzFramework;
+    if (!NetQuery::IsEntityAuthoritative(GetEntityId())) return;
+
     // Spawn the selected dynamic slice
     LmbrCentral::SpawnerComponentRequestBus::Event(GetEntityId(),
         &LmbrCentral::SpawnerComponentRequestBus::Events::Spawn);
@@ -16,7 +20,9 @@ void MySpawnerComponent::GetRequiredServices(
     AZ::ComponentDescriptor::DependencyArrayType& req)
 {
     // We require SpawnerComponent on the same entity
-    req.push_back(AZ_CRC("SpawnerService"));
+    req.push_back(AZ_CRC("SpawnerService", 0xd2f1d7a3));
+    // Make sure this component is activated after NetworkBinding
+    req.push_back(AZ_CRC("ReplicaChunkService", 0xf86b88a8));
 }
 
 void MySpawnerComponent::Reflect(AZ::ReflectContext* reflection)
