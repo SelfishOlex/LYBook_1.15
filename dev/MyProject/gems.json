@@ -199,6 +199,12 @@
             "_comment": "Multiplayer"
         },
         {
+            "Path": "Gems/MultiplayerCharacter",
+            "Uuid": "e99a702176e54d1ebcddb43fc8b15139",
+            "Version": "0.1.0",
+            "_comment": "MultiplayerCharacter"
+        },
+        {
             "Path": "Gems/PrimitiveAssets",
             "Uuid": "ed07631f95fb4be1bd10cd37298ec697",
             "Version": "1.0.0",

@@ -1,0 +1,18 @@
+{
+    "none": {
+        "Source": [
+            "Source/MultiplayerCharacter_precompiled.cpp",
+            "Source/MultiplayerCharacter_precompiled.h"
+        ]
+    },
+    "auto": {
+        "Include": [
+            "Include/MultiplayerCharacter/MultiplayerCharacterBus.h"
+        ],
+        "Source": [
+            "Source/MultiplayerCharacterModule.cpp",
+            "Source/MultiplayerCharacterSystemComponent.cpp",
+            "Source/MultiplayerCharacterSystemComponent.h"
+        ]
+    }
+}
