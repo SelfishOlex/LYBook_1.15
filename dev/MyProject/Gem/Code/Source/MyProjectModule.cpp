@@ -9,6 +9,7 @@
 #include "OscillatorComponent.h"
 #include "MySpawnerComponent.h"
 #include "StartingMapSystemComponent.h"
+#include "TransformSyncComponent.h"
 
 #include <IGem.h>
 
@@ -31,6 +32,7 @@ namespace MyProject
                 MyComponent::CreateDescriptor(),
                 OscillatorComponent::CreateDescriptor(),
                 MySpawnerComponent::CreateDescriptor(),
+                TransformSyncComponent::CreateDescriptor(),
             });
         }
 
