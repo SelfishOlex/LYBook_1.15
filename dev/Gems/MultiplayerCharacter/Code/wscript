@@ -3,4 +3,5 @@
 def build(bld):
     bld.DefineGem(
         # Add custom build options here
+        use         = ['LmbrCentral'],
     )
