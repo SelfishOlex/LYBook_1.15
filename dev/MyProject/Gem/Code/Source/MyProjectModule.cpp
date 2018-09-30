@@ -10,6 +10,7 @@
 #include "MySpawnerComponent.h"
 #include "StartingMapSystemComponent.h"
 #include "TransformSyncComponent.h"
+#include "MyUIStatusComponents.h"
 
 #include <IGem.h>
 
@@ -33,6 +34,10 @@ namespace MyProject
                 OscillatorComponent::CreateDescriptor(),
                 MySpawnerComponent::CreateDescriptor(),
                 TransformSyncComponent::CreateDescriptor(),
+                MyUIForwardComponent::CreateDescriptor(),
+                MyUIBackwardComponent::CreateDescriptor(),
+                MyUIStrafeLeftComponent::CreateDescriptor(),
+                MyUIStrafeRightComponent::CreateDescriptor(),
             });
         }
 
