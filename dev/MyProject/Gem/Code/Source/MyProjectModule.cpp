@@ -13,6 +13,7 @@
 #include "MyScriptHelperComponent.h"
 #include "MyUIStatusComponents.h"
 #include "MyScriptSystemComponent.h"
+#include "ScriptCanvas/MyNodeLibrary.h"
 
 #include <IGem.h>
 
@@ -43,6 +44,10 @@ namespace MyProject
                 MyScriptSystemComponent::CreateDescriptor(),
                 MyScriptHelperComponent::CreateDescriptor(),
             });
+
+            auto desc = MyNodeLibrary::GetComponentDescriptors();
+            m_descriptors.insert(m_descriptors.end(),
+                desc.begin(), desc.end());
         }
 
         /**
