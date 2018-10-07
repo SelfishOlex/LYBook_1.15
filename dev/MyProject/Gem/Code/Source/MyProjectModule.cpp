@@ -11,6 +11,7 @@
 #include "StartingMapSystemComponent.h"
 #include "TransformSyncComponent.h"
 #include "MyUIStatusComponents.h"
+#include "MyScriptSystemComponent.h"
 
 #include <IGem.h>
 
@@ -38,6 +39,7 @@ namespace MyProject
                 MyUIBackwardComponent::CreateDescriptor(),
                 MyUIStrafeLeftComponent::CreateDescriptor(),
                 MyUIStrafeRightComponent::CreateDescriptor(),
+                MyScriptSystemComponent::CreateDescriptor(),
             });
         }
 
@@ -49,6 +51,7 @@ namespace MyProject
             return AZ::ComponentTypeList{
                 azrtti_typeid<MyProjectSystemComponent>(),
                 azrtti_typeid<StartingMapSystemComponent>(),
+                azrtti_typeid<MyScriptSystemComponent>(),
             };
         }
     };
