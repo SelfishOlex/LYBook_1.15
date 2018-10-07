@@ -4,9 +4,11 @@
 #include <LmbrCentral/Physics/CryCharacterPhysicsBus.h>
 #include <AzCore/Math/Vector3.h>
 #include <AzCore/Component/TransformBus.h>
+#include <Integration/AnimGraphComponentBus.h>
 
 using namespace AZ;
 using namespace MultiplayerCharacter;
+using namespace EMotionFX;
 
 void PlayerControlsComponent::Activate()
 {
@@ -39,7 +41,7 @@ void PlayerControlsComponent::Reflect(AZ::ReflectContext* ref)
     // reflection of this component for Lumberyard Editor
     ec->Class<PlayerControlsComponent>("Player Controls",
         "[Implements various player controls]")
-      ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
+        ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
         ->Attribute(AppearsInAddComponentMenu,
             AZ_CRC("Game", 0x232b318c))
         ->Attribute(Category, "Multiplayer Character")
@@ -73,6 +75,13 @@ void PlayerControlsComponent::Turn(float amount)
 {
     m_rotZ = amount * m_turnSpeed;
     SetRotation();
+
+    using AnimBus = Integration::AnimGraphComponentRequestBus;
+    AnimBus::Event(GetEntityId(),
+        &AnimBus::Events::SetNamedParameterFloat, "TurnSpeed",
+        (m_prevTurn - amount) * 100);
+
+    m_prevTurn = amount;
 }
 
 void PlayerControlsComponent::SetRotation()
@@ -80,7 +89,7 @@ void PlayerControlsComponent::SetRotation()
     // Rotate the entity
     TransformBus::Event(GetEntityId(),
         &TransformBus::Events::SetLocalRotationQuaternion,
-            Quaternion::CreateRotationZ(m_rotZ));
+        Quaternion::CreateRotationZ(m_rotZ));
 }
 
 void PlayerControlsComponent::OnTick(
@@ -90,7 +99,7 @@ void PlayerControlsComponent::OnTick(
     static const Vector3 xUnit = Vector3::CreateAxisX(1.f);
 
     // Figure out where the movement will take the entity
-    AZ::Vector3 direction{0, 0, 0};
+    AZ::Vector3 direction{ 0, 0, 0 };
     if (m_isForward)
         direction += yUnit;
     if (m_isBackward)
@@ -114,4 +123,9 @@ void PlayerControlsComponent::OnTick(
     CryCharacterPhysicsRequestBus::Event(GetEntityId(),
         &CryCharacterPhysicsRequestBus::Events::RequestVelocity,
         direction, 0);
+
+    using AnimBus = Integration::AnimGraphComponentRequestBus;
+    AnimBus::Event(GetEntityId(),
+        &AnimBus::Events::SetNamedParameterFloat, "Speed",
+        direction.GetLengthSq() > 0 ? 10.f : 0.f);
 }
