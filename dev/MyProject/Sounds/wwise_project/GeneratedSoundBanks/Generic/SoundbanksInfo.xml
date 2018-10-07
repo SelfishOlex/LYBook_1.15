@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Generic" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="128">
+	<RootPaths>
+		<ProjectRoot>D:\Work\LYBook\dev\MyProject\Sounds\wwise_project\</ProjectRoot>
+		<SourceFilesRoot>D:\Work\LYBook\dev\MyProject\Sounds\wwise_project\.cache\Generic\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Work\LYBook\dev\MyProject\Sounds\wwise_project\GeneratedSoundBanks\Generic\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Work\LYBook\dev\MyProject\Sounds\wwise_project\GeneratedSoundBanks\Generic</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="2643612632" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Content</ObjectPath>
+			<ShortName>Content</ShortName>
+			<Path>Content.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
