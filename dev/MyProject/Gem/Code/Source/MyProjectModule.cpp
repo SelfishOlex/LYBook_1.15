@@ -10,6 +10,7 @@
 #include "MySpawnerComponent.h"
 #include "StartingMapSystemComponent.h"
 #include "TransformSyncComponent.h"
+#include "MyScriptHelperComponent.h"
 #include "MyUIStatusComponents.h"
 
 #include <IGem.h>
@@ -38,6 +39,7 @@ namespace MyProject
                 MyUIBackwardComponent::CreateDescriptor(),
                 MyUIStrafeLeftComponent::CreateDescriptor(),
                 MyUIStrafeRightComponent::CreateDescriptor(),
+                MyScriptHelperComponent::CreateDescriptor(),
             });
         }
 
