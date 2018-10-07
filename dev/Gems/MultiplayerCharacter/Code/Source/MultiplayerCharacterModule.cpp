@@ -6,6 +6,7 @@
 #include <PlayerControlsComponent.h>
 #include <InputCaptureComponent.h>
 #include <CameraControlsComponent.h>
+#include <FootstepComponent.h>
 
 namespace MultiplayerCharacter
 {
@@ -28,6 +29,7 @@ namespace MultiplayerCharacter
                 PlayerControlsComponent::CreateDescriptor(),
                 CameraControlsComponent::CreateDescriptor(),
                 InputCaptureComponent::CreateDescriptor(),
+                FootstepComponent::CreateDescriptor(),
             });
         }
 
