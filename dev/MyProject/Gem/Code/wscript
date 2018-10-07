@@ -7,7 +7,8 @@ def build(bld):
     script_canvas_dir = driver_node.path_from(gem_node)
 
     CODEGEN_FILE_LIST = [
-        'Source/ScriptCanvas/MyScriptCanvasNode.h',
+        'Source/ScriptCanvas/MyIncrementNode.h',
+        'Source/ScriptCanvas/MyScriptCanvasNode.h'
     ]
 
     bld.DefineGem(
