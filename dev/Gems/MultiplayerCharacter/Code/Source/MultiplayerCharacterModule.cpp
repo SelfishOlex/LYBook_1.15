@@ -7,6 +7,9 @@
 #include <InputCaptureComponent.h>
 #include <CameraControlsComponent.h>
 #include <FootstepComponent.h>
+#include <LocalClientComponent.h>
+#include <ServerAuthPlayerComponent.h>
+#include <ServerPlayerSpawnerComponent.h>
 
 namespace MultiplayerCharacter
 {
@@ -30,6 +33,9 @@ namespace MultiplayerCharacter
                 CameraControlsComponent::CreateDescriptor(),
                 InputCaptureComponent::CreateDescriptor(),
                 FootstepComponent::CreateDescriptor(),
+                LocalClientComponent::CreateDescriptor(),
+                ServerAuthPlayerComponent::CreateDescriptor(),
+                ServerPlayerSpawnerComponent::CreateDescriptor(),
             });
         }
 
