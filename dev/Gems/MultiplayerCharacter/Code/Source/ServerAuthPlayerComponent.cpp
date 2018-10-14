@@ -88,6 +88,12 @@ void ServerAuthPlayerComponent::UnbindFromNetwork()
     }
 }
 
+void ServerAuthPlayerComponent::GetRequiredServices(
+    AZ::ComponentDescriptor::DependencyArrayType& req)
+{
+    req.push_back(AZ_CRC("PlayerActionRelayService"));
+}
+
 void ServerAuthPlayerComponent::Activate()
 {
     if (IsDedicated())

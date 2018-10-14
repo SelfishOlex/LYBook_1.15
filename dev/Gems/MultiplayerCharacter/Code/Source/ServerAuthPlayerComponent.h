@@ -24,6 +24,10 @@ namespace MultiplayerCharacter
             GridMate::ReplicaChunkPtr chunk) override;
         void UnbindFromNetwork() override;
 
+        // what other components does this component require?
+        static void GetRequiredServices(
+            AZ::ComponentDescriptor::DependencyArrayType& req);
+
     protected:
         // AZ::Component interface implementation
         void Activate() override;
