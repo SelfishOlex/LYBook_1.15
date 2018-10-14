@@ -13,6 +13,7 @@
 #include "MyScriptHelperComponent.h"
 #include "MyUIStatusComponents.h"
 #include "MyScriptSystemComponent.h"
+#include "MyUICanvasLoaderComponent.h"
 #include "ScriptCanvas/MyNodeLibrary.h"
 
 #include <IGem.h>
@@ -43,6 +44,7 @@ namespace MyProject
                 MyUIStrafeRightComponent::CreateDescriptor(),
                 MyScriptSystemComponent::CreateDescriptor(),
                 MyScriptHelperComponent::CreateDescriptor(),
+                MyUICanvasLoaderComponent::CreateDescriptor(),
             });
 
             auto desc = MyNodeLibrary::GetComponentDescriptors();
