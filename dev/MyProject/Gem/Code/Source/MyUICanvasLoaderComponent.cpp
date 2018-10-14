@@ -16,7 +16,7 @@ void MyUICanvasLoaderComponent::Activate()
 void MyUICanvasLoaderComponent::GetRequiredServices(
     AZ::ComponentDescriptor::DependencyArrayType& prov)
 {
-    prov.push_back(AZ_CRC("UiCanvasRefService"));
+    prov.push_back(AZ_CRC("UiCanvasRefService", 0xb4cb5ef4));
 }
 
 void MyUICanvasLoaderComponent::Reflect(AZ::ReflectContext* rc)
@@ -34,6 +34,6 @@ void MyUICanvasLoaderComponent::Reflect(AZ::ReflectContext* rc)
     ec->Class<MyUICanvasLoaderComponent>("My UI Canvas Loader",
         "[Loads UI canvas on clients only]")
       ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
-        ->Attribute(AppearsInAddComponentMenu, AZ_CRC("Game"))
+        ->Attribute(AppearsInAddComponentMenu, AZ_CRC("Game", 0x232b318c))
         ->Attribute(Category, "My Project");
 }
