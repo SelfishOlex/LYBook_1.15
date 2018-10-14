@@ -20,7 +20,7 @@ namespace MyProject
             {
                 ec->Class<MyProjectSystemComponent>("MyProject", "[Description of functionality provided by this System Component]")
                     ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
-                        ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("System"))
+                        ->Attribute(AZ::Edit::Attributes::AppearsInAddComponentMenu, AZ_CRC("System", 0xc94d118b))
                         ->Attribute(AZ::Edit::Attributes::AutoExpand, true)
                     ;
             }
@@ -29,12 +29,12 @@ namespace MyProject
 
     void MyProjectSystemComponent::GetProvidedServices(AZ::ComponentDescriptor::DependencyArrayType& provided)
     {
-        provided.push_back(AZ_CRC("MyProjectService"));
+        provided.push_back(AZ_CRC("MyProjectService", 0x722fa694));
     }
 
     void MyProjectSystemComponent::GetIncompatibleServices(AZ::ComponentDescriptor::DependencyArrayType& incompatible)
     {
-        incompatible.push_back(AZ_CRC("MyProjectService"));
+        incompatible.push_back(AZ_CRC("MyProjectService", 0x722fa694));
     }
 
     void MyProjectSystemComponent::GetRequiredServices(AZ::ComponentDescriptor::DependencyArrayType& required)

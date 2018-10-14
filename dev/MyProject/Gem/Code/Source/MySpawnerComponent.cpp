@@ -41,6 +41,6 @@ void MySpawnerComponent::Reflect(AZ::ReflectContext* reflection)
     ec->Class<MySpawnerComponent>("My Spawner Component",
         "[spawns a dynamic slice using Spawner]")
       ->ClassElement(AZ::Edit::ClassElements::EditorData, "")
-        ->Attribute(AppearsInAddComponentMenu, AZ_CRC("Game"))
+        ->Attribute(AppearsInAddComponentMenu, AZ_CRC("Game", 0x232b318c))
         ->Attribute(Category, "My Project");
 }
