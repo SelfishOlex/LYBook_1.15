@@ -94,6 +94,8 @@ namespace LmbrCentral
 
     void RandomTimedSpawnerComponent::Activate()
     {
+        RandomTimedSpawnerComponentRequestBus::Handler::BusConnect(GetEntityId());
+
         m_currentTime = 0.0;
         CalculateNextSpawnTime();
 
@@ -105,6 +107,8 @@ namespace LmbrCentral
 
     void RandomTimedSpawnerComponent::Deactivate()
     {
+        RandomTimedSpawnerComponentRequestBus::Handler::BusDisconnect();
+
         if (m_config.m_enabled)
         {
             AZ::TickBus::Handler::BusDisconnect();

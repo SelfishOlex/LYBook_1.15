@@ -25,5 +25,6 @@ namespace MyProject
         virtual ~MyHelper() = default;
 
         static bool IsEntityAuthoritative(AZ::EntityId entity);
+        static bool IsDedicatedServer();
     };
 }

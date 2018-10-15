@@ -15,6 +15,9 @@
 #include "MyScriptSystemComponent.h"
 #include "MyUICanvasLoaderComponent.h"
 #include "ScriptCanvas/MyNodeLibrary.h"
+#include <AzFramework/Network/InterestManagerComponent.h>
+#include <LargeWorld/PointOfInterestComponent.h>
+#include <LargeWorld/PlayerAoIComponent.h>
 
 #include <IGem.h>
 
@@ -45,6 +48,11 @@ namespace MyProject
                 MyScriptSystemComponent::CreateDescriptor(),
                 MyScriptHelperComponent::CreateDescriptor(),
                 MyUICanvasLoaderComponent::CreateDescriptor(),
+                PointOfInterestComponent::CreateDescriptor(),
+                PlayerAoIComponent::CreateDescriptor(),
+
+                // enabling interest management
+                AzFramework::InterestManagerComponent::CreateDescriptor(),
             });
 
             auto desc = MyNodeLibrary::GetComponentDescriptors();
@@ -61,6 +69,7 @@ namespace MyProject
                 azrtti_typeid<MyProjectSystemComponent>(),
                 azrtti_typeid<StartingMapSystemComponent>(),
                 azrtti_typeid<MyScriptSystemComponent>(),
+                azrtti_typeid<AzFramework::InterestManagerComponent>(),
             };
         }
     };
