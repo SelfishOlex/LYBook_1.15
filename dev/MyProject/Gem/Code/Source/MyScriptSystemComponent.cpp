@@ -36,7 +36,7 @@ void MyScriptSystemComponent::Reflect(AZ::ReflectContext* rc)
 bool MyScriptSystemComponent::IsEditor()
 {
     ISystem* system = nullptr;
-    CrySystemRequestBus::BroadcastResult(system, &CrySystemRequests::GetCrySystem);
+    CrySystemRequestBus::BroadcastResult(system, &CrySystemRequestBus::Events::GetCrySystem);
     if (system && system->GetGlobalEnvironment())
     {
         return system->GetGlobalEnvironment()->IsEditor();
