@@ -6,7 +6,8 @@
 void MultiplayerCloseAllNetworkPeers::ShutdownApplication()
 {
     ISystem* system = nullptr;
-    EBUS_EVENT_RESULT(system, CrySystemRequestBus, GetCrySystem);
+    CrySystemRequestBus::BroadcastResult(system,
+        &CrySystemRequestBus::Events::GetCrySystem);
     if (system)
     {
         system->GetIConsole()->ExecuteString("quit");
